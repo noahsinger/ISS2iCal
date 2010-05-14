@@ -1,0 +1,84 @@
+<% content_for :title do %>
+	Scale Solar System - Threesuns
+<% end %>
+<!--******************************************************-->
+<div id="sun" class="planets">
+	<img src="/images/scale/scale_sun.png" id="sunImage"/>
+	<h2>Sun</h2>
+	<span class="travel_time">19725.38</span>
+	<%= link_to 'Next Stop, Mercury &rarr;', '#mercury', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="mercury" class="planets">
+	<img src="/images/scale/scale_mercury.png" id="mercuryImage"/>
+	<h2>Mercury</h2>
+	<span class="travel_time">193.17</span>
+	<%= link_to 'This way to Venus &rarr;', '#venus', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="venus" class="planets">
+	<img src="/images/scale/scale_venus.png" id="venusImage"/>
+	<h2>Venus</h2>
+	<span class="travel_time">167.75</span>
+	<%= link_to 'Next is Earth &rarr;', '#earth', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="earth" class="planets">
+	<img src="/images/scale/scale_earth.png" id="earthImage"/>
+	<h2>Earth</h2>
+	<span class="travel_time">138.1</span>
+	<%= link_to 'Here comes Mars &rarr;', '#mars', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="mars" class="planets">
+	<img src="/images/scale/scale_mars.png" id="marsImage"/>
+	<h2>Mars</h2>
+	<span class="travel_time">261.31</span>
+	<%= link_to 'Long way to Jupiter &rarr;', '#jupiter', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="jupiter" class="planets">
+	<img src="/images/scale/scale_jupiter.png" id="jupiterImage"/>
+	<h2>Jupiter</h2>
+	<span class="travel_time">1835.9</span>
+	<%= link_to 'Can\'t see Saturn from here &rarr;', '#saturn', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="saturn" class="planets">
+	<img src="/images/scale/scale_saturn.png" id="saturnImage"/>
+	<h2>Saturn</h2>
+	<span class="travel_time">2171.74</span>
+	<%= link_to 'Next stop, Uranus &rarr;', '#uranus', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="uranus" class="planets">
+	<img src="/images/scale/scale_uranus.png" id="uranusImage"/>
+	<h2>Uranus</h2>
+	<span class="travel_time">4808.63</span>
+	<%= link_to 'Off to Neptune &rarr;', '#neptune', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="neptune" class="planets">
+	<img src="/images/scale/scale_neptune.png" id="neptuneImage"/>
+	<h2>Neptune</h2>
+	<span class="travel_time">5447.14</span>
+	<%= link_to 'It\'s not a planet any more but lets go to Pluto &rarr;', '#pluto', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="pluto" class="planets">
+	<img src="/images/scale/scale_pluto.png" id="plutoImage"/>
+	<h2>Pluto</h2>
+	<span class="travel_time">4701.65</span>
+	<%= link_to 'Back to the Sun &rarr;', '#sun', :class => 'planet_link' %>
+</div>
+<!--******************************************************-->
+<div id="endnote">
+	All calculations are based on a 72 pixel / inch display
+	and are as accurate as I could make them.  Information for planet
+	diameter and orbit radius were taken from
+	<a href="http://www.seds.org/nineplanets/nineplanets/nineplanets.html">The Nine Planets</a>
+	made available by <a href="http://www.seds.org/nineplanets/arnett.html">Bill Arnet</a>
+	The <a href="Solar System Scale Model.ods">spreadsheet</a> used to
+	calculate the scale values can be opened in Calc from the
+	<a href="http://www.openoffice.org/">OpenOffice</a> suite.
+</div>

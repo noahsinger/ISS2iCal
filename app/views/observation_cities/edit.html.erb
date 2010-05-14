@@ -1,0 +1,24 @@
+<h1>Editing <%= @observation_city.name %></h1>
+
+<% form_for([@observation_state, @observation_city]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :observation_state %>
+    <%= f.select(:observation_state_id, ObservationState.all.map {|state| [state.name, state.id]}) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [@observation_state, @observation_city] %> |
+<%= link_to 'Back', observation_state_observation_cities_path(@observation_state) %>

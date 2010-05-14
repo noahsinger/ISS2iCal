@@ -1,0 +1,22 @@
+<h2>Observation States</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @observation_states.each do |observation_state| %>
+  <tr>
+    <td>
+		<%=link_to observation_state.name, observation_state_observation_cities_path(observation_state) %>
+		<hr/>
+		<%= link_to 'Edit', edit_observation_state_path(observation_state) %><br/>
+	    <%= link_to 'Destroy', observation_state, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New observation_state', new_observation_state_path %>

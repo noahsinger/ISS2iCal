@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  observation_city: 
+  when: 2010-02-15 15:30:57
+  duration: 1
+  elevation: 1
+  approach: MyString
+  departure: MyString
+
+two:
+  observation_city: 
+  when: 2010-02-15 15:30:57
+  duration: 1
+  elevation: 1
+  approach: MyString
+  departure: MyString

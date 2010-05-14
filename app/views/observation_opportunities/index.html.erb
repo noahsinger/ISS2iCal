@@ -1,0 +1,43 @@
+<h2>Observation Opportunities for <%= @observation_city.name %>, <%= @observation_state.name %></h2>
+
+<p>
+	<%= link_to 'Dump and Reload', dump_and_reload_observation_state_observation_city_path(@observation_state,@observation_city) %>
+</p>
+<p>
+	<%= link_to 'Update', update_feed_observation_state_observation_city_path(@observation_state,@observation_city) %>
+</p>
+<p>
+	<%= link_to( 'ICAL', observation_state_observation_city_observation_opportunities_url(@observation_state,@observation_city, :format => :ics, :protocol => 'webcal') ) %>
+</p>
+
+<table>
+  <tr>
+	<th>Title</th>
+    <th>When</th>
+    <th>Dur</th>
+    <th>Elev</th>
+    <th>Approach</th>
+    <th>Departure</th>
+  </tr>
+
+<% @observation_opportunities.each do |observation_opportunity| %>
+  <tr>
+	<td>
+		<%=h observation_opportunity.title %>
+		<hr/>
+		<%= link_to 'Show', [@observation_state, @observation_city, observation_opportunity] %><br/>
+	    <%= link_to 'Destroy', [@observation_state,@observation_city,observation_opportunity], :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+    <td><%=h time_ago_in_words observation_opportunity.when %></td>
+    <td><%=h observation_opportunity.duration %></td>
+    <td><%=h observation_opportunity.elevation %></td>
+    <td><%=h observation_opportunity.approach %></td>
+    <td><%=h observation_opportunity.departure %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<hr/>
+<%= link_to 'Back to Cities', observation_state_observation_cities_path(@observation_state) %>

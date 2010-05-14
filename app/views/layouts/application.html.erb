@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title><%= yield( :title ) || "Threesuns" %></title>
+		<%= stylesheet_link_tag 'scaffold', 'custom-theme/jquery-ui-1.7.2.custom', 'threesuns' %>
+		<%= javascript_include_tag 'jquery-1.3.2.min', 'jquery-ui-1.7.2.custom.min', 'jquery.scrollTo-min', 'jquery.easing.1.3', 'jquery.easing.compatibility', 'application', 'google_analytics' %>
+	</head>
+	<body>
+		<div id="pseudobody"></div>
+
+		<div id="page">
+			<%- if flash[:notice] -%>
+				<p class="ui-state-highlight ui-corner-all" id="flash"> <span class="ui-icon ui-icon-info"></span> <%= flash[:notice] %></p>
+			<%- end -%>
+			<%- if flash[:error] -%>
+				<p class="ui-state-error ui-corner-all" id="flash"> <span class="ui-icon ui-icon-alert"></span> <%= flash[:error] %></p>
+			<%- end -%>
+			<div id="threesuns">
+				<div id="display">
+					<div class="content"></div>
+					<div id="threesuns_link"><%= link_to_unless_current image_tag( 'threesuns.png', :height => '48' ), {:controller => 'home', :action => 'index'} %></div>
+				</div>
+			</div>
+			<div id="content"><%= yield %></div>
+			<div id="footer">
+				<span>
+					<%= link_to '&copy;', login_path %> <%= Time.now.year.en.numwords :and => " " %> / threesuns.org
+					<% if current_user %>  
+						<%= link_to "/ logout /", logout_path %>  
+					<% end %>
+				</span>
+				
+				<%= yield :footer %>
+			</div>
+		</div>		
+	</body>
+</html>

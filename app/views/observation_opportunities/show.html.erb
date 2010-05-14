@@ -1,0 +1,42 @@
+<p>
+  <b>Observation city:</b>
+  <%=h @observation_opportunity.observation_city.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @observation_opportunity.title %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%=h @observation_opportunity.when %>
+</p>
+
+<p>
+  <b>GUID:</b>
+  <%=h @observation_opportunity.guid %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%=h @observation_opportunity.duration %>
+</p>
+
+<p>
+  <b>Elevation:</b>
+  <%=h @observation_opportunity.elevation %>
+</p>
+
+<p>
+  <b>Approach:</b>
+  <%=h @observation_opportunity.approach %>
+</p>
+
+<p>
+  <b>Departure:</b>
+  <%=h @observation_opportunity.departure %>
+</p>
+
+
+<%= link_to 'Back', observation_state_observation_city_observation_opportunities_path(@observation_state,@observation_city) %>

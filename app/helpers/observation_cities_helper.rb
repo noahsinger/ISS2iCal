@@ -1,0 +1,2 @@
+module ObservationCitiesHelper
+end

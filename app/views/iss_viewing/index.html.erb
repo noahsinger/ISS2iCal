@@ -1,0 +1,24 @@
+<% content_for :title do %>
+	ISS Viewing iCal Feeds - Threesuns
+<% end %>
+<h1>ISS Viewing Opportunities iCal Feeds</h1>
+
+<div id="accordion">
+<%- @states.each do |state| -%>
+	<% div_for state do %>
+		<h2><%=link_to state.name, '#' %></h2>
+		<ul>
+		<%- state.observation_cities.each do |city| -%>
+			<li>
+				<%# link_to( city.name, observation_state_observation_city_observation_opportunities_url(state,city, :format => :ics, :protocol => 'webcal') ) %>
+				<%= link_to( city.name, iss_viewing_url(city, :format => :ics, :protocol => 'webcal') ) %>
+			</li>
+		<%- end -%>
+		</ul>
+	<% end %>
+<%- end -%>
+</div>
+
+<% content_for :footer do %>
+	/ data for viewing opportunities provided by <%= link_to 'nasa.gov', 'http://spaceflight.nasa.gov/realdata/sightings/' %>
+<% end %>

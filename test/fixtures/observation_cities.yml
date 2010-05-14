@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  observation_state: 
+  name: MyString
+  url: MyString
+
+two:
+  observation_state: 
+  name: MyString
+  url: MyString
