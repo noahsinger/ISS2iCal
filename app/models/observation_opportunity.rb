@@ -5,12 +5,23 @@ class ObservationOpportunity < ActiveRecord::Base
     self.destroy if self.when < Time.now
   end
   
+  def starts
+    DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, self.when.utc.strftime("%M").to_i)
+  end
+  
+  def ends
+    begs = DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, self.when.utc.strftime("%M").to_i )
+    begs.in(self.duration * 60)
+  end
+  
   def to_ical_event
     event = Icalendar::Event.new
   	event.klass       "PUBLIC"
     # event.custom_property( "DTSTART;VALUE=DATE", self.when.strftime("%Y%m%d").to_i ) #for all day events
-    event.dtstart     DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, self.when.utc.strftime("%M").to_i)
-    event.dtend       DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, (self.when.utc.strftime("%M").to_i) + self.duration)
+    # event.dtstart     DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, self.when.utc.strftime("%M").to_i)
+    # event.dtend       DateTime.civil(self.when.utc.strftime("%Y").to_i, self.when.utc.strftime("%m").to_i, self.when.utc.strftime("%d").to_i, self.when.utc.strftime("%H").to_i, ((self.when.utc.strftime("%M").to_i + self.duration)) )
+    event.dtstart     self.starts
+    event.dtend       self.ends
   	event.summary     self.title
   	event.description "Duration: #{self.duration} minutes\nMaximum Elevation: #{self.elevation} degrees\nApproach: #{self.approach}\nDeparture: #{self.departure}"
   	event.location    "#{self.observation_city.name}, #{self.observation_city.observation_state.name}"
