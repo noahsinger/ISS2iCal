@@ -1,0 +1,5 @@
+pauldix-feedzirra, :lib => "feedzirra", :source => http://gems.github.com
+icalendar
+authlogic
+linguistics
+declarative_authorization, :source => http://gemcutter.org
