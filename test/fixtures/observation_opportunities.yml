@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  observation_city: 
+  observation_city_id: 0 
   when: 2010-02-15 15:30:57
   duration: 1
   elevation: 1
-  approach: MyString
-  departure: MyString
+  approach: NW
+  departure: SE
 
 two:
-  observation_city: 
+  observation_city_id: 0 
   when: 2010-02-15 15:30:57
-  duration: 1
-  elevation: 1
-  approach: MyString
-  departure: MyString
+  duration: 3
+  elevation: 45
+  approach: SW
+  departure: NS

@@ -18,7 +18,8 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
     when /the model page/
       url_for :controller => 'scale', :action => 'solarsystem'
-
+    when /the iss viewing page/
+      iss_viewing_index_path
     else
       begin
         page_name =~ /the (.*) page/

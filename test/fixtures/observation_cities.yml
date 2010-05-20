@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  observation_state: 
-  name: MyString
-  url: MyString
+  id: 0
+  observation_state_id: 0 
+  name: Tulsa
+  url: http://tulsatest.com/
 
 two:
-  observation_state: 
-  name: MyString
-  url: MyString
+  id: 1
+  observation_state_id: 1
+  name: Witchita
+  url: http://withcitatest.com

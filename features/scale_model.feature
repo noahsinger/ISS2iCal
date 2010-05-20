@@ -5,7 +5,8 @@ Feature: Scale Model
 
 	Scenario: Show Model
 	  When I go to the model page
-	  Then I should see "Earth"
+	  Then I should see "Mercury"
+	  And I should see "Earth"
 	  And I should see "Jupiter"
 
 
