@@ -1,4 +1,4 @@
-pauldix-feedzirra, :lib => "feedzirra", :source => http://gems.github.com
+feedzirra
 icalendar
 authlogic
 linguistics
