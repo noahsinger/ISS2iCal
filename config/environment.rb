@@ -17,11 +17,11 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
-  config.gem "pauldix-feedzirra", :lib => "feedzirra", :source => "http://gems.github.com"
+  config.gem "feedzirra"
   config.gem "icalendar"
   config.gem "authlogic"
   config.gem "linguistics"
-  config.gem "declarative_authorization", :source => "http://gemcutter.org"
+  config.gem "declarative_authorization"
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
