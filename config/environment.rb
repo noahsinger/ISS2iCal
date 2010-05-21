@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "linguistics"
   config.gem "declarative_authorization"
-  config.gem "machanize"
+  config.gem "mechanize"
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
