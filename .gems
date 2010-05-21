@@ -2,4 +2,4 @@ feedzirra
 icalendar
 authlogic
 linguistics
-declarative_authorization, :source => http://gemcutter.org
+declarative_authorization
